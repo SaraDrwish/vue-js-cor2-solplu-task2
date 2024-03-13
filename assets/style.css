@@ -33,17 +33,16 @@ a{
 }
 
 
-
  .home-content  {
   /* background-color: skyblue; */
   padding: 2rem 1rem;
   display: flex;
   flex-direction: column;
   /* background-color: brown; */
-  gap: 4rem;
+  gap: 2rem;
 }
  .home-content h1{
-  margin: auto;
+  /* margin: auto; */
   text-align: center;
   text-transform: capitalize;
   font-weight: bold;
@@ -60,11 +59,17 @@ main .logo{
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
   gap: 2rem;
-  height: 14rem;
   color: orange;
   /* background-color: rgb(150, 150, 52); */
+}
+.home-content-1 .box1-cont{
+  width: 100%;
+  height: 16rem;
+  padding: 1rem;
+  /* background-color: violet; */
+  display: flex;
+  justify-content: center;
 }
 .box1{
   width: 7rem;
@@ -75,6 +80,20 @@ main .logo{
   -moz-border-radius: 0.5rem;
   -ms-border-radius: 0.5rem;
   -o-border-radius: 0.5rem;
+}
+
+
+
+/* ///////////////////////////////// */
+
+
+
+.lin{
+  width: 100%;
+  height: 0.8rem;
+  margin:2rem  auto;
+  background-color: rgb(70, 13, 13);
+  border-radius: 4rem;
 }
 
 /* ////////////////////////////2-2 */
@@ -92,21 +111,23 @@ main .logo{
   color: rgb(87, 176, 167);
 }
 
-/* .home-content-2 .img-cont{
+.home-content-2 .img-cont{
   display: flex;
-  background-color: yellowgreen;
+  /* background-color: yellowgreen; */
   padding: 1rem;
-} */
+  width: 90%;
+  height: 100%;
+}
 
 .home-content-2 .img-cont .img-slidr{
   display: flex;
   align-items: center;
   justify-content: center;
   margin: auto;
-   width: 30%;
-    height: 30%;
+   width: 80%;
+    height: 40%;
     /* background-color: antiquewhite; */
-    padding: 2rem;
+    padding: 1rem;
 }
 
 .home-content-2 img{
