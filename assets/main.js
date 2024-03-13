@@ -15,8 +15,9 @@ setInterval(() => {
 
 // t2
 
-let imgSlidr = document.querySelector(".img-slidr");
-let imgsArr = ["1.png", "2.png", "3.png", "4.png"];
+let imgSlidr = document.querySelector(".img-slider-img");
+// let imgSlidr = document.querySelector(".img-slidr");
+let imgsArr = ["1.png", "2.png", "3.png", "4.png","5.png" , "6.png" , "7.png", "8.png"];
 let randbtn = document.querySelector(".random");
 console.log(imgSlidr);
 imgSlidr.style.backgroundImage = 'url("./imgs/1.png")';
