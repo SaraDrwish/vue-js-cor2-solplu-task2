@@ -5,8 +5,7 @@ setInterval(() => {
   let box1 = document.querySelector(".box1");
   let width = Math.floor(Math.random() * 11) + 1;
   let height = Math.floor(Math.random() * 11) + 1;
-  // let randomColor = "#" + ((Math.random() * 0xffffff) << 0).toString(16);
-  let randomColor = "#" + Math.floor(Math.random() * 16777215).toString(16);
+  let randomColor = "#" + Math.floor(Math.random() * 11111111).toString(16);
 
   box1.style.width = width + "rem";
   box1.style.height = height + "rem";
