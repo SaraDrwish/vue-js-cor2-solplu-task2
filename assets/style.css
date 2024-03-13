@@ -135,6 +135,9 @@ main .logo{
   height: 100%;
   border-radius: 0.5rem;
   display: none;
+  /* background-position: center; */
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 img.active {

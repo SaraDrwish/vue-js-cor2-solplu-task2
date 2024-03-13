@@ -92,16 +92,21 @@ setInterval(() => {
 // document.addEventListener("DOMContentLoaded", randomizeImages);
 
 
-
 // ////////////////////////////////////////////////////////////////////////////////////
 
 
 let imgSlidrImg = document.querySelector(".img-slider-img");
 let imgsArr = ["1.png", "2.png", "3.png", "4.png", "5.png", "6.png", "7.png", "8.png", "9.png"];
-let randbtn = document.querySelector(".random");
 imgSlidrImg.style.backgroundImage = 'url("./assets/imgs/1.png")';
-console.log(imgSlidrImg);
 
+let randbtn = document.querySelector(".random");
+let prev = document.querySelector(".prev")
+let next = document.querySelector(".next")
+let auto = document.querySelector(".auto")
+
+
+
+ 
 // ///////////////////////
 
 let currentSlide = 0;
@@ -123,23 +128,24 @@ const randomizeImages = () => {
       let randomImageIndex = Math.floor(Math.random() * imgsArr.length);
       imgSlidrImg.style.backgroundImage = `url("./assets/imgs/${imgsArr[randomImageIndex]}")`;
     });
-  }, 1000);
+  }, 900);
 };
 
-document.querySelector(".prev").addEventListener("click", prevSlide);
-document.querySelector(".next").addEventListener("click", nextSlide);
-randbtn.addEventListener("click", randomizeImages);
 
 let autoplayInterval;
-
 const startAutoplay = () => {
-  autoplayInterval = setInterval(nextSlide, 1000);  
+  autoplayInterval = setInterval(nextSlide, 500);  
 };
-
 const stopAutoplay = () => {
   clearInterval(autoplayInterval);
 };
 
+
+prev.addEventListener("click", prevSlide);
+next.addEventListener("click", nextSlide);
+randbtn.addEventListener("click", randomizeImages);
+auto.addEventListener("click", startAutoplay );
+
+
 // ///////////////////////////////////////////////////////////////////////////////////
 
-// ///////////////////////
