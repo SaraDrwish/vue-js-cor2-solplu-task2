@@ -15,72 +15,86 @@ setInterval(() => {
 
 // t2
 
-let imgSlidr = document.querySelector(".img-slider-img");
+let imgSlidrImg = document.querySelector(".img-slider-img");
 // let imgSlidr = document.querySelector(".img-slidr");
-let imgsArr = ["1.png", "2.png", "3.png", "4.png","5.png" , "6.png" , "7.png", "8.png"];
+let imgsArr = ["1.png", "2.png", "3.png", "4.png","5.png" , "6.png" , "7.png", "8.png","9.png"];
 let randbtn = document.querySelector(".random");
-console.log(imgSlidr);
-imgSlidr.style.backgroundImage = 'url("./imgs/1.png")';
-console.log(imgSlidr);
+// console.log(imgSlidr);
+imgSlidrImg.style.backgroundImage = 'url("./assets/imgs/1.png")';
+// imgSlidr.style.backgroundImage = 'url("./imgs/1.png")';
+console.log(imgSlidrImg);
 // let randImg = Math.floor(Math.random() * imgsArr.length);
 // console.log(randImg);
 
-// randbtn.addEventListener("click", () => {
-//   setInterval(() => {
-//     let randImg = Math.floor(Math.random() * imgsArr.length);
-//     imgSlidr.style.backgroundImage =
-//       'url("./imgs/' + imgsArr[randImg] + '.png")';
-
-//     console.log(randImg);
-//   }, 1000);
-// });
-
-// end
+ 
 
 // ///////////////////////
 
 let currentSlide = 0;
-const slides = document.querySelectorAll(".img-slidr img");
-const totalSlides = slides.length;
+// const slides = document.querySelectorAll(".img-slidr img");
+const totalSlides = imgsArr.length;
 
-const showSlide = (n) => {
-  slides.forEach((slide) => slide.classList.remove("active"));
-  slides[n].classList.add("active");
-};
+// const showSlide = (n) => {
+//   imgsArr.forEach((slide) => slide.classList.remove("active"));
+//   imgsArr[n].classList.add("active");
+// };
 
 const prevSlide = () => {
   currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
-  showSlide(currentSlide);
+  // showSlide(currentSlide);
+  // imgSlidrImg.style.backgroundImage = 'url("./assets/imgs/1.png")';
+  imgSlidrImg.style.backgroundImage = `url(${currentSlide})`;
+
+  // return currentSlide
 };
+console.log(prevSlide)
 
 const nextSlide = () => {
   currentSlide = (currentSlide + 1) % totalSlides;
-  showSlide(currentSlide);
+  // showSlide(currentSlide);
+  return nextSlide
 };
+console.log(nextSlide())
 
-document.querySelector(".prev").addEventListener("click", prevSlide);
-document.querySelector(".next").addEventListener("click", nextSlide);
+document.querySelector(".prev").addEventListener("click", prevSlide  );
+document.querySelector(".next").addEventListener("click", nextSlide  );
+randbtn.addEventListener("click", randomizeImages);
 
 let autoplayInterval;
 
 const startAutoplay = () => {
-  autoplayInterval = setInterval(nextSlide, 2000); // Change slide every 2 seconds
+  autoplayInterval = setInterval(nextSlide, 1000);  
 };
 
 const stopAutoplay = () => {
   clearInterval(autoplayInterval);
 };
 
-startAutoplay(); // Start autoplay by default
+// startAutoplay();  
 
 const randomizeImages = () => {
-  slides.forEach((slide) => {
-    const randomImageIndex = Math.floor(Math.random() * totalSlides);
-    const src = slides[randomImageIndex].src;
-    slide.src = src;
+  imgsArr.forEach(() => {
+    let imgSlidrImg = Math.floor(Math.random() * imgsArr.length);
+    // const src = imgsArr[randomImageIndex].src;
+    // slide.src = src;
+    imgSlidrImg.style.backgroundImage =
+    'url("./imgs/' + imgsArr[imgSlidrImg] + '.png")';
   });
+
+  // randbtn.addEventListener("click", () => {
+    setInterval(() => {
+      // let imgSlidrImg = Math.floor(Math.random() * imgsArr.length);
+      let imgSlidrImg = Math.floor(Math.random() * imgsArr.length);
+
+      imgSlidrImg.style.backgroundImage =
+        'url("./imgs/' + imgsArr[imgSlidrImg] + '.png")';
+  
+      console.log(imgSlidrImg);
+    }, 1000);
+  // });
+
 };
 
-document.addEventListener("DOMContentLoaded", randomizeImages);
+// document.addEventListener("DOMContentLoaded", randomizeImages);
 
 // ///////////////////////
