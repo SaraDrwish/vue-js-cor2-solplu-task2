@@ -111,6 +111,10 @@
     -ms-border-radius: 1rem;
     -o-border-radius: 1rem;
 }
+.apiContent-container{
+  background-color: antiquewhite;
+  padding: 2rem;
+}
 .apiContent{
   width: 90%;
   display: flex;
@@ -122,16 +126,22 @@
   gap: 1rem;
   padding: 1rem;
   background-color:rgb(101, 25, 41);
-  border: 2px solid sandybrown;
+  border: 2px solid rgb(255, 129, 20);
   border-radius: 1rem;
   color: rgb(238, 193, 198);
 }
 .apiContent span {
   color: sandybrown;
+  padding: 1rem;
+}
+.apiContent h3 {
+  color: rgb(221, 171, 185);
+  padding: 1rem;
 }
 .apiContent p{
   color: rgb(163, 207, 192);
   font-weight: 700;
+  padding: 1rem;
 }
 
   .img-slider-img{
