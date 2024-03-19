@@ -15,35 +15,43 @@ let randImgBtn = document.querySelector(".random");
 let autoImgBtn = document.querySelector(".auto");
 let prevImgBtn = document.querySelector(".prev");
 let nextImgBtn = document.querySelector(".next");
+let stopImgBtn = document.querySelector(".stop");
+
+let autoPlay;
 
 let imageBox = document.querySelector(".img-slider-img");
 
     function getRandomImg(){
-        let randImg = Math.floor(Math.random() * imgArr.length + 1);
-        console.log(randImg)
-        imageBox.src=`./assets/imgs/${randImg}.png`
+        function randomImg(){
+            let randImg = Math.floor(Math.random() * imgArr.length + 1);
+            console.log(randImg)
+            imageBox.src=`./assets/imgs/${randImg}.png`;
+        }
+        
+        autoPlay = setInterval( randomImg , 900 );
+
     }
+
 
  let currentImg = 0 ;
 
-    function autoDisplayImg(){
-        // imgArr.forEach(arr => {
-        // let arry = imageBox.src=`./assets/imgs/${arr}`;
-        // console.log(arry)
-        // });
-        // for()
-        
-        setInterval( ()=>{
-            if( currentImg >= imgArr.length-1 ){
-                currentImg = -1
-            }
-            currentImg++;
-            return setImgUI();
-        } , 1000);
-    }
-        // setTimeout(autoDisplayImg , 800);
+        function autoDisplayImg(){
 
-// autoDisplayImg()
+            autoPlay = setInterval( ()=>{
+                if( currentImg >= imgArr.length-1 ){
+                    currentImg = -1
+                }
+                currentImg++;
+                return setImgUI();
+            } , 1000);
+    
+    }
+
+
+    function stopAutoPlayImg(){
+        clearInterval(autoPlay);
+    }; 
+
 
     function setImgUI(){
        return imageBox.src=`./assets/imgs/${imgArr[currentImg]}`
@@ -66,9 +74,9 @@ let imageBox = document.querySelector(".img-slider-img");
     }
 
 
-// randImgBtn.addEventListener("click" , setTimeout(autoDisplayImg , 800));
 randImgBtn.addEventListener("click" , getRandomImg);
 autoImgBtn.addEventListener("click" , autoDisplayImg );
+stopImgBtn.addEventListener("click" , stopAutoPlayImg);
 nextImgBtn.addEventListener("click" , nextImgSelct );
 prevImgBtn.addEventListener("click" , prevImgSelct );
 
