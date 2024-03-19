@@ -30,9 +30,11 @@ fetch("https://jsonplaceholder.typicode.com/posts")
     return res.json();
   })
   .then((data) => {
-    data.foreach((el) => {
+    console.log(data);
+    data.forEach((el) => {
       console.log(el);
-      apiPost.textContent = `${el.title}`;
+      apiTitle.textContent = `${"Tilte is : " + el.title}`;
+      apiPost.textContent = `${"The Post is : " + el.body}`;
       //   let dataDom = (apiPost.textContent = `${el.title}`);
     });
   })
