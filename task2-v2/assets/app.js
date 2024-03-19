@@ -16,9 +16,10 @@ let prevImgBtn = document.querySelector(".prev");
 let nextImgBtn = document.querySelector(".next");
 let stopImgBtn = document.querySelector(".stop");
 // ///////////
-// let apiTitle = document.querySelector(".img-slider-h3-title");
-// let apiPost = document.querySelector(".img-slider-p");
-// let apispanNum = document.querySelector(".apiContent span");
+let apiTitle = document.querySelector(".img-slider-h3-title");
+let apiPost = document.querySelector(".img-slider-p");
+let apispanNum = document.querySelector(".apiContent span");
+let apiContent = document.querySelector(".apiContent");
 // //////////// start task week 3 ---------
 let apiData;
 let apiCount = 0;
@@ -31,21 +32,33 @@ fetch("https://jsonplaceholder.typicode.com/posts")
     console.log("data is : (array) ");
     console.log(data);
     apiData = data.forEach((el) => {
-      //   console.log(el);
-      let apiSpan = `<span>${el.id}</span>`;
-      let apih3 = `<h3>${el.title}</h3>`;
-      let apiP = `<p>${el.body}</p>`;
-      document
-        .querySelector(".apiContent")
-        .insertAdjacentHTML("beforeend", apiSpan);
-      document
-        .querySelector(".apiContent")
-        .insertAdjacentHTML("beforeend", apih3);
-      document
-        .querySelector(".apiContent")
-        .insertAdjacentHTML("beforeend", apiP);
+      //   console.log(typeof el);
+      //   let count = 0;
+      //   for (let elm in el) {
+      // if (el.hasOwnProperty(el.title)) {
 
-      //   let apiSpanElmnt = document.querySelector(".apiContent").innerHTML(apiSpan);
+      apiContent = `
+        <span>${el.id}</span>
+        <h3 class="img-slider-h3-title">${el.title}</h3>
+        <p class="img-slider-p">${el.body}</p>`;
+      //   apiTitle.textContent = `${el.title}`;
+      //   apiPost.textContent = `${el.body}`;
+      //   apispanNum.textContent = `${el.id}`;
+      // }
+      // count++;
+      //   }
+      //   let apiSpan = `<span>${el.id}</span>`;
+      //   let apih3 = `<h3>${el.title}</h3>`;
+      //   let apiP = `<p>${el.body}</p>`;
+      //   document
+      //     .querySelector(".apiContent")
+      //     .insertAdjacentHTML("beforeend", apiSpan);
+      //   document
+      //     .querySelector(".apiContent")
+      //     .insertAdjacentHTML("beforeend", apih3);
+      //   document
+      //     .querySelector(".apiContent")
+      //     .insertAdjacentHTML("beforeend", apiP);
 
       console.log(el.body + "   --  " + el.id + "   --  " + el.title);
       console.log(el);
