@@ -44,67 +44,57 @@ let imageBox = document.querySelector(".img-slider-img");
  
 
     function autoDisplayImg(){
-        // let i=1
-        // if( i < imgArr.length - 1 ){
-        //     i++
-        // }else{
-        //     i=1
-        // }
-        // setTimeout(autoDisplayImg , 100)
-
-        // setTimeout(()=>{
-                // let counterImg = imgArr.length ;
+  
                  imgArr.forEach(arr => {
                  let arry = imageBox.src=`./assets/imgs/${arr}`;
                  console.log(arry)
-                //  console.log(arry++)
-                 });
-                //  console.log(arry)
-            // console.log("autoDisplayImg: " + "counterImg++" + counterImg + (counterImg++) + "imgCounter" + imgCounter + imgCounter++ )
-        // } , 1000)
+                  });
+
     }
  
- let currentImg = 1 ;
+ let currentImg =0 ;
 
     function setImgUI(){
-       return imageBox.src=`./assets/imgs/${currentImg}.png`
+       return imageBox.src=`./assets/imgs/${imgArr[currentImg]}`
     }
 
     function nextImgSelct(){
-        if( currentImg >= imgArr.length && (currentImg !== 0) ){
-            // if(imgArr.length  != 0){
-            //     currentImg = -1
-            // }else{
-            //      imgArr.length = 1
-            // }
-            
-          currentImg = -1
-
+        if( currentImg >= imgArr.length-1 ){
+            currentImg = -1
         }
         currentImg++;
         return setImgUI();
     }
 
+    // function nextImgSelct(){
+    //     if( currentImg >= imgArr.length && (currentImg !== 0) ){
+    //         if(currentImg == 0){
+    //              currentImg = 1
+    //         }else{currentImg = -1}
+    //     }
+    //     currentImg++;
+    //     return setImgUI();
+    // }
+
     function prevImgSelct(){
-        if( currentImg <= 1 && (currentImg !== 0)  ){
-
-            // if(imgArr.length != 0  ){
-            //     currentImg-- ;
-     
-            //  }else{
-            //       imgArr.length = 1
-            //  }
-
-                // currentImg-- ;
-
+        if( currentImg <= 0 ){
                 currentImg = imgArr.length
-
         }
-      
         currentImg-- ;
-
         return setImgUI();
     }
+
+    // function prevImgSelct(){
+    //     if( currentImg <= 0  ){
+    //             if(currentImg == 0){
+    //                 currentImg = 1 ;
+    //             }else{
+    //                 currentImg = imgArr.length;
+    //             }
+    //     }
+    //     currentImg-- ;
+    //     return setImgUI();
+    // }
 
 
 randImgBtn.addEventListener("click" , getRandomImg );
