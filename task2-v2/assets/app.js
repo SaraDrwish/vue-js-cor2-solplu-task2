@@ -20,26 +20,22 @@ let apiTitle = document.querySelector(".img-slider-h3-title");
 let apiPost = document.querySelector(".img-slider-p");
 let apispanNum = document.querySelector(".apiContent span");
 // //////////// start task week 3 ---------
-// let fetchapifunc = async () => {
-//   await fetch("https://jsonplaceholder.typicode.com/posts");
-// };
 
 fetch("https://jsonplaceholder.typicode.com/posts")
   .then((res) => {
-    console.log(res);
+    console.log("the res is : " + res);
     return res.json();
   })
   .then((data) => {
-    console.log(data);
+    console.log("the data is : " + data);
     data.forEach((el) => {
-      console.log(el);
+      console.log("the el is : " + el);
       apispanNum.textContent = `${el.id}`;
       apiTitle.textContent = `${"Tilte is : " + el.title}`;
       apiPost.textContent = `${"The Post is : " + el.body}`;
-      //   let dataDom = (apiPost.textContent = `${el.title}`);
     });
   })
-  .catch((error) => console.log(error));
+  .catch((error) => console.log("error is : " + error));
 
 // //////////// end task week 3 ---------
 
