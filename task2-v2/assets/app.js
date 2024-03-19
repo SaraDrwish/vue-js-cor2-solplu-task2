@@ -18,7 +18,7 @@ let stopImgBtn = document.querySelector(".stop");
 // ///////////
 let apiTitle = document.querySelector(".img-slider-h3-title");
 let apiPost = document.querySelector(".img-slider-p");
-
+let apispanNum = document.querySelector(".apiContent span");
 // //////////// start task week 3 ---------
 // let fetchapifunc = async () => {
 //   await fetch("https://jsonplaceholder.typicode.com/posts");
@@ -33,6 +33,7 @@ fetch("https://jsonplaceholder.typicode.com/posts")
     console.log(data);
     data.forEach((el) => {
       console.log(el);
+      apispanNum.textContent = `${el.id}`;
       apiTitle.textContent = `${"Tilte is : " + el.title}`;
       apiPost.textContent = `${"The Post is : " + el.body}`;
       //   let dataDom = (apiPost.textContent = `${el.title}`);
