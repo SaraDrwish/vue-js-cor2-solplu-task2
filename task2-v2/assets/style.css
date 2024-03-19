@@ -17,6 +17,17 @@
     color: unset;
     text-decoration: none;
   }
+  .nav-icon{
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    filter: blur(0.6px);
+  }
+  .nav-icon img{
+    width: 8%;
+    height: 8%;
+    filter: grayscale(0.57);
+  }
   .container{
     width: 90%;
     margin: auto;
