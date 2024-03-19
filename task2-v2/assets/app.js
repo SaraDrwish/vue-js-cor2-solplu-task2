@@ -1,5 +1,4 @@
 
-
 let imgArr = [
     "1.png",
     "2.png",
@@ -19,40 +18,32 @@ let nextImgBtn = document.querySelector(".next");
 
 let imageBox = document.querySelector(".img-slider-img");
 
-// let randImg ;
-// let getRandomImg = ()=>{
-
     function getRandomImg(){
         let randImg = Math.floor(Math.random() * imgArr.length + 1);
         console.log(randImg)
         imageBox.src=`./assets/imgs/${randImg}.png`
     }
 
-
-    // function testtime(){
-        // setTimeout(()=>{
-        //     let randImg = Math.floor(Math.random() * imgArr.length + 1) ;
-        //         // document.querySelector(".img-slider-img").src=`./assets/imgs/${randImg}.png`
-        //         console.log("testtime " + randImg)
-        //         console.log("testtime ")
-        // } , 1000)
-    // } 
-    // testtime()
-    // console.log("testtime " + randImg)
-
-
- 
+ let currentImg = 0 ;
 
     function autoDisplayImg(){
-  
-                 imgArr.forEach(arr => {
-                 let arry = imageBox.src=`./assets/imgs/${arr}`;
-                 console.log(arry)
-                  });
-
+        // imgArr.forEach(arr => {
+        // let arry = imageBox.src=`./assets/imgs/${arr}`;
+        // console.log(arry)
+        // });
+        // for()
+        
+        setInterval( ()=>{
+            if( currentImg >= imgArr.length-1 ){
+                currentImg = -1
+            }
+            currentImg++;
+            return setImgUI();
+        } , 1000);
     }
- 
- let currentImg =0 ;
+        // setTimeout(autoDisplayImg , 800);
+
+// autoDisplayImg()
 
     function setImgUI(){
        return imageBox.src=`./assets/imgs/${imgArr[currentImg]}`
@@ -66,16 +57,6 @@ let imageBox = document.querySelector(".img-slider-img");
         return setImgUI();
     }
 
-    // function nextImgSelct(){
-    //     if( currentImg >= imgArr.length && (currentImg !== 0) ){
-    //         if(currentImg == 0){
-    //              currentImg = 1
-    //         }else{currentImg = -1}
-    //     }
-    //     currentImg++;
-    //     return setImgUI();
-    // }
-
     function prevImgSelct(){
         if( currentImg <= 0 ){
                 currentImg = imgArr.length
@@ -84,20 +65,9 @@ let imageBox = document.querySelector(".img-slider-img");
         return setImgUI();
     }
 
-    // function prevImgSelct(){
-    //     if( currentImg <= 0  ){
-    //             if(currentImg == 0){
-    //                 currentImg = 1 ;
-    //             }else{
-    //                 currentImg = imgArr.length;
-    //             }
-    //     }
-    //     currentImg-- ;
-    //     return setImgUI();
-    // }
 
-
-randImgBtn.addEventListener("click" , getRandomImg );
+// randImgBtn.addEventListener("click" , setTimeout(autoDisplayImg , 800));
+randImgBtn.addEventListener("click" , getRandomImg);
 autoImgBtn.addEventListener("click" , autoDisplayImg );
 nextImgBtn.addEventListener("click" , nextImgSelct );
 prevImgBtn.addEventListener("click" , prevImgSelct );
