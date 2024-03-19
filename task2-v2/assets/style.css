@@ -132,7 +132,7 @@
   border-radius: 1rem;
   color: rgb(238, 193, 198);
 }
-.apiContent span {
+.apiContent .span  , .apiContent span{
   color: sandybrown;
   padding: 1rem;
 }

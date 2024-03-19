@@ -16,10 +16,22 @@ let prevImgBtn = document.querySelector(".prev");
 let nextImgBtn = document.querySelector(".next");
 let stopImgBtn = document.querySelector(".stop");
 // ///////////
-let apiTitle = document.querySelector(".img-slider-h3-title");
-let apiPost = document.querySelector(".img-slider-p");
-let apispanNum = document.querySelector(".apiContent span");
+// let apiTitle = document.querySelector(".img-slider-h3-title");
+// let apiPost = document.querySelector(".img-slider-p");
+// let apispanNum = document.querySelector(".apiContent span");
 let apiContent = document.querySelector(".apiContent");
+// //////////////////
+
+let apiTitle = document.createElement("h3");
+let apiPost = document.createElement("p");
+let apispanNum = document.createElement("span");
+// let apiContent = document.createElement("div");
+
+apiTitle.className = "img-slider-h3-title";
+apiPost.className = "img-slider-p";
+apispanNum.className = "span";
+// apiContent.className = "apiContent";
+
 // //////////// start task week 3 ---------
 let apiData;
 let apiCount = 0;
@@ -32,34 +44,27 @@ fetch("https://jsonplaceholder.typicode.com/posts")
     console.log("data is : (array) ");
     console.log(data);
     apiData = data.forEach((el) => {
-      let apiSpan = `<span>${el.id}</span>`;
+      apiTitle.innerHTML = `<span>${el.id}</span>`;
       let apih3 = `<h3>${el.title}</h3>`;
+      //   let apih3 = `<h3>${el.title}</h3>`;
       let apiP = `<p>${el.body}</p>`;
 
-      let apiSpanElm = document
-        .querySelector(".apiContent")
-        .insertAdjacentHTML("beforeend", apiSpan);
-      let apih3Elm = document
-        .querySelector(".apiContent")
-        .insertAdjacentHTML("beforeend", apih3);
-      let apiPElm = document
-        .querySelector(".apiContent")
-        .insertAdjacentHTML("beforeend", apiP);
+      //   let apiSpanElm = document
+      //     .querySelector(".apiContent")
+      //     .insertAdjacentHTML("beforeend", apiSpan);
+      //   let apih3Elm = document.querySelector(".apiContent");
+      //   apih3Elm.insertAdjacentHTML("beforeend", apih3);
+      //   let apiPElm = document.querySelector(".apiContent").insertAdjacentHTML("beforeend", apiP);
 
-      //   let apiContentContainer = document.querySelector(".apiContent-container");
-      //   apiContent = apiSpanElm + apih3Elm + apiPElm;
-      //   apiContentContainer.insertAdjacentHTML("afterend", apiContent);
+      //   apiContent.innerHTML = `
+      //    let apiSpan = <span>${el.id}</span>
+      //    <h3>${el.title}</h3>
+      //    <p>${el.body}</p>
+      //     `;
 
-      //   apiContent.insertAdjacentHTML("beforeend", apiSpanElm, apih3Elm, apiPElm);
-
-      //   apiContent.appendChild(apiSpanElm, apih3Elm, apiPElm);
-      //   apiContent.appendChild("apiSpanElm");
-      //   apiContent.appendChild("apih3Elm");
-      //   apiContent.appendChild("apiPElm");
-
-      apiContent.appendChild(apiSpanElm);
-      apiContent.appendChild(apih3Elm);
-      apiContent.appendChild(apiPElm);
+      apiContent = `${apiTitle}`;
+      apiContent.innerHTML = apiTitle;
+      //   apiContent.insertAdjacentHTML("beforeend", apiTitle);
 
       console.log(el);
       console.log(el.body + "   --  " + el.id + "   --  " + el.title);
