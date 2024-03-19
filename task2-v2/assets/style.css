@@ -111,10 +111,12 @@
     -ms-border-radius: 1rem;
     -o-border-radius: 1rem;
 }
-/* .apiContent-container{
-  background-color: antiquewhite;
+.apiContent-container{
+  background-color: rgb(140, 177, 181);
   padding: 2rem;
-} */
+  margin: 1rem auto;
+  border-radius: 1rem;
+}
 .apiContent{
   width: 90%;
   display: flex;
