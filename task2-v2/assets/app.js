@@ -9,6 +9,7 @@ let imgArr = [
     "6.png",
     "7.png",
     "8.png",
+    "9.png"
 ]
 
 let randImgBtn = document.querySelector(".random");
@@ -63,46 +64,45 @@ let imageBox = document.querySelector(".img-slider-img");
         // } , 1000)
     }
  
- let currentImg = 0 ;
+ let currentImg = 1 ;
 
     function setImgUI(){
-        // imageBox.src=`./assets/imgs/${randImg}.png`
-        // imageBox.src=`./assets/imgs/${imgArr.length}.png`;
-
-        // g = imgArr.forEach(arr => {
-        //     //  imageBox.src=`./assets/imgs/${arr}`;
-        //     imageBox.src=`./assets/imgs/${arr}`
-        //     console.log(arr)
-        //     console.log(arr)
-        //  });
-
-        
-
-        //  console.log(h )
-
-        return  
-        
-        for( arr = 0 ; arr <= imgArr.length ; arr++ ){
-            imageBox.src=`./assets/imgs/${arr}`
-         }
-        
-        // return  imageBox  
-
+       return imageBox.src=`./assets/imgs/${currentImg}.png`
     }
 
     function nextImgSelct(){
-        if(currentImg >= imgArr.length - 1 ){
-            currentImg = -1
+        if( currentImg >= imgArr.length && (currentImg !== 0) ){
+            // if(imgArr.length  != 0){
+            //     currentImg = -1
+            // }else{
+            //      imgArr.length = 1
+            // }
+            
+          currentImg = -1
+
         }
         currentImg++;
         return setImgUI();
     }
 
     function prevImgSelct(){
-        if(currentImg <= 0 ){
-            currentImg = imgArr.length
+        if( currentImg <= 1 && (currentImg !== 0)  ){
+
+            // if(imgArr.length != 0  ){
+            //     currentImg-- ;
+     
+            //  }else{
+            //       imgArr.length = 1
+            //  }
+
+                // currentImg-- ;
+
+                currentImg = imgArr.length
+
         }
+      
         currentImg-- ;
+
         return setImgUI();
     }
 
