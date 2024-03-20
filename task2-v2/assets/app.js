@@ -35,29 +35,34 @@ let apiCount = 0;
 fetch("https://jsonplaceholder.typicode.com/posts")
   .then((res) => {
     // console.log("the res is object respons : " + res);
-    if (!res.ok) {
-        throw new Error("the data 'empty'");
-      }
     let JsonResponse = res.json();
     return JsonResponse ;
   })
   .then((data) => {
      // console.log( "type od data : " + typeof data + " //.... //"+ data + "end data");
     apiData = data.forEach((el,index)=> {
-      let apiTitle = `<span>${el.id}</span>`;
+
+      let apiIdNum = `<span>${el.id}</span>`;
       let apih3 = `<h3>${el.title} </h3>`;
       let apiP = `<p>${el.body}</p>`;
+
+    //   let apiIdElm = document.querySelector(".apiContent");
+        //   let apih3Elm = document.querySelector(".apiContent h3");
+    //   let apiPElm = document.querySelector(".apiContent p");
+        
         if(index==0){
-            let apiTitleElm = document
-            .querySelector(".apiContent")
-            .insertAdjacentHTML("beforeend", apiTitle);
-            let apiSpanElm = document
-              .querySelector(".apiContent")
-              .insertAdjacentHTML("beforeend", apiP);
-            let apih3Elm = document
-              .querySelector(".apiContent")
-              .insertAdjacentHTML("beforeend", apih3);
-        }  
+            let apiIdElm= document.querySelector(".apiContent").insertAdjacentHTML("beforeend", apiIdNum);
+            let apih3Elm = document.querySelector(".apiContent").insertAdjacentHTML("beforeend", apih3);    
+            let apiPElm = document.querySelector(".apiContent").insertAdjacentHTML("beforeend", apiP); 
+        }  else if(index >2 && index <5){
+        //     apiIdElm.insertAdjacentHTML("beforeend", apiIdNum);
+        //     apih3Elm.insertAdjacentHTML("beforeend", apih3);    
+        //    apiPElm.insertAdjacentHTML("beforeend", apiP); 
+        let apiIdElm= document.querySelector(".apiContent").insertAdjacentHTML("beforeend", apiIdNum);
+            let apih3Elm = document.querySelector(".apiContent").insertAdjacentHTML("beforeend", apih3);    
+            let apiPElm = document.querySelector(".apiContent").insertAdjacentHTML("beforeend", apiP); 
+            
+        }
  
         // ////
         // let currentPost = 0;
@@ -80,7 +85,7 @@ fetch("https://jsonplaceholder.typicode.com/posts")
         // }
         // ////
      let datamapel = data.map(el=>el.id);
-     console.log( "datamapel: " + datamapel );
+     console.log( "datamapel: " + datamapel  );
 
     //  console.log(data.map(el=> { el.id}) );
     // console.log("Data: "+  el , "/,,,/");
