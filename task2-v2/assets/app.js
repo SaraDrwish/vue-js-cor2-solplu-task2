@@ -49,7 +49,6 @@ let handlResponsFetch = () => {
 };
 
 handlResponsFetch();
-//   //////////////////
 
 let autoPlay;
 
