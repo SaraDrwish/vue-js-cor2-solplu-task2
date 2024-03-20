@@ -143,8 +143,10 @@
 .apiContent p{
   color: rgb(163, 207, 192);
   font-weight: 700;
-  padding: 0 1rem 2rem 1rem;
-  border-bottom: 3px solid sandybrown ;
+  width: 90%;
+  margin:  0 0 2.6rem 0;
+  padding: 0rem 1rem 2.5rem 1rem;
+  border-bottom: 4px solid rgb(216, 182, 180) ;
 }
 
   .img-slider-img{

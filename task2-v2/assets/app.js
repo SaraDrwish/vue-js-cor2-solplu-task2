@@ -46,22 +46,14 @@ fetch("https://jsonplaceholder.typicode.com/posts")
       let apih3 = `<h3>${el.title} </h3>`;
       let apiP = `<p>${el.body}</p>`;
 
-    //   let apiIdElm = document.querySelector(".apiContent");
-        //   let apih3Elm = document.querySelector(".apiContent h3");
-    //   let apiPElm = document.querySelector(".apiContent p");
-        
         if(index==0){
             let apiIdElm= document.querySelector(".apiContent").insertAdjacentHTML("beforeend", apiIdNum);
             let apih3Elm = document.querySelector(".apiContent").insertAdjacentHTML("beforeend", apih3);    
             let apiPElm = document.querySelector(".apiContent").insertAdjacentHTML("beforeend", apiP); 
-        }  else if(index >2 && index <5){
-        //     apiIdElm.insertAdjacentHTML("beforeend", apiIdNum);
-        //     apih3Elm.insertAdjacentHTML("beforeend", apih3);    
-        //    apiPElm.insertAdjacentHTML("beforeend", apiP); 
-        let apiIdElm= document.querySelector(".apiContent").insertAdjacentHTML("beforeend", apiIdNum);
+        }  else if(index >=1 && index <5){
+            let apiIdElm= document.querySelector(".apiContent").insertAdjacentHTML("beforeend", apiIdNum);
             let apih3Elm = document.querySelector(".apiContent").insertAdjacentHTML("beforeend", apih3);    
             let apiPElm = document.querySelector(".apiContent").insertAdjacentHTML("beforeend", apiP); 
-            
         }
  
         // ////
