@@ -41,8 +41,6 @@ let handlResponsFetch = () => {
         console.log(el);
         console.log(el.body + "   --  " + el.id + "   --  " + el.title);
         // ////////////
-
-        // ///////////
       });
     })
     .catch((error) => console.log("error is : " + error));
@@ -51,7 +49,6 @@ let handlResponsFetch = () => {
 handlResponsFetch();
 
 let autoPlay;
-
 function getRandomImg() {
   function randomImg() {
     let randapi = Math.floor(Math.random() * el.id + 1);
@@ -102,7 +99,5 @@ autoImgBtn.addEventListener("click", autoDisplayImg);
 stopImgBtn.addEventListener("click", stopAutoPlayImg);
 nextImgBtn.addEventListener("click", nextImgSelct);
 prevImgBtn.addEventListener("click", prevImgSelct);
-
-// ////////////////
 
 // //////////// end task week 3 ---------
