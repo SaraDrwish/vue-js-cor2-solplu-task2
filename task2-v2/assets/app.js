@@ -47,8 +47,6 @@ fetch("https://jsonplaceholder.typicode.com/posts")
       let apiTitle = `<span>${el.id}</span>`;
       let apih3 = `<h3>${el.title} </h3>`;
       let apiP = `<p>${el.body}</p>`;
-    //   for(let i=0 ; i>=index ; i++){
-    //   }
         if(index==0){
             let apiTitleElm = document
             .querySelector(".apiContent")
@@ -62,7 +60,6 @@ fetch("https://jsonplaceholder.typicode.com/posts")
         }  
  
         // ////
-
         // let currentPost = 0;
         // function setUI() {
         //   return PostBox = el.body ;
@@ -81,7 +78,6 @@ fetch("https://jsonplaceholder.typicode.com/posts")
         //   currentPost--;
         //   return setUI();
         // }
-      
         // ////
      let datamapel = data.map(el=>el.id);
      console.log( "datamapel: " + datamapel );

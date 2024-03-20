@@ -85,7 +85,7 @@
     align-items: center;
     justify-content: center;
     gap: 2rem;
-    padding: 1rem;
+    padding: 0.5rem;
     color: rgb(255, 145, 0);
   }
   .home-content-2 .img-cont{
@@ -103,8 +103,8 @@
     margin: auto;
     width: 80%;
     /* height: 25rem; */
-    padding: 1rem;
-    background-color:rgba(255, 187, 98, 0.8) ;
+    padding: 0.5rem;
+    /* background-color:rgba(255, 187, 98, 0.8) ; */
     border-radius: 1rem;
     -webkit-border-radius: 1rem;
     -moz-border-radius: 1rem;
@@ -112,9 +112,9 @@
     -o-border-radius: 1rem;
 }
 .apiContent-container{
-  background-color: rgb(140, 177, 181);
-  padding: 2rem;
-  margin: 1rem auto;
+  /* background-color: rgb(140, 177, 181); */
+  /* padding: 2rem; */
+  /* margin: 1rem auto; */
   border-radius: 1rem;
 }
 .apiContent{
@@ -123,10 +123,10 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin: 1rem auto;
+  margin: 0.5rem auto;
   text-align: center;
   gap: 1rem;
-  padding: 1rem;
+  padding: 0.5rem;
   background-color:rgb(101, 25, 41);
   border: 2px solid rgb(255, 129, 20);
   border-radius: 1rem;
