@@ -9,18 +9,28 @@ setInterval(() => {
   box1.style.height = height + "rem";
   box1.style.backgroundColor = randomColor;
 }, 1000);
- 
+
 // ////////////////////////////////////////////////////////////////////////////////////
 // t2
 let imgSlidrImg = document.querySelector(".img-slider-img");
-let imgsArr = ["1.png", "2.png", "3.png", "4.png", "5.png", "6.png", "7.png", "8.png", "9.png"];
+let imgsArr = [
+  "1.png",
+  "2.png",
+  "3.png",
+  "4.png",
+  "5.png",
+  "6.png",
+  "7.png",
+  "8.png",
+  "9.png",
+];
 imgSlidrImg.style.backgroundImage = 'url("./assets/imgs/1.png")';
 
 let randbtn = document.querySelector(".random");
-let prev = document.querySelector(".prev")
-let next = document.querySelector(".next")
-let auto = document.querySelector(".auto")
- 
+let prev = document.querySelector(".prev");
+let next = document.querySelector(".next");
+let auto = document.querySelector(".auto");
+
 // ///////////////////////
 
 let currentSlide = 0;
@@ -47,7 +57,7 @@ const randomizeImages = () => {
 
 let autoplayInterval;
 const startAutoplay = () => {
-  autoplayInterval = setInterval(nextSlide, 500);  
+  autoplayInterval = setInterval(nextSlide, 500);
 };
 const stopAutoplay = () => {
   clearInterval(autoplayInterval);
@@ -56,6 +66,6 @@ const stopAutoplay = () => {
 prev.addEventListener("click", prevSlide);
 next.addEventListener("click", nextSlide);
 randbtn.addEventListener("click", randomizeImages);
-auto.addEventListener("click", startAutoplay );
+auto.addEventListener("click", startAutoplay);
 
 // ///////////////////////////////////////////////////////////////////////////////////

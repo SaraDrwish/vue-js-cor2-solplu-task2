@@ -72,6 +72,9 @@ prevImgBtn.addEventListener("click", prevImgSelct);
 let apiContent = document.querySelector(".apiContent");
 let apiNextBtn = document.querySelector(".nextApi");
 let apiPrevBtn = document.querySelector(".prevApi");
+let apiAutoBtn = document.querySelector(".autoApi");
+let apiRandomBtn = document.querySelector(".randomApi");
+
 let apiData;
 let apiCount = 0;
 let url = "https://jsonplaceholder.typicode.com/posts";
@@ -83,15 +86,14 @@ let handlResponsFetch = async () => {
 
     if (response.status == 200) {
       // console.log(data);
-      data.map((dta, index) => {
-        apiContent.innerHTML = ` <h3>${data[0].id} </h3> <br>  <span>${data[0].title}</span>  <br> <p>${data[0].body}</p> `;
-        // let leepdata = () => {
-        //   for (let i = 0; i <= apiLength; i++) {
-        //     console.log("::i::", i);
-        //   }
-        //   console.log("leepdata:", data[1].id);
-        // };
-        // leepdata();
+      data.map((data) => {
+        apiContent.innerHTML = `
+        <h3>${data[0].id} </h3> 
+        <br>
+        <span>${data[0].title}</span> 
+        <br>
+        <p>${data[0].body}</p> `;
+
         let counter = 0;
         let apiLength = data.length;
 
@@ -105,11 +107,9 @@ let handlResponsFetch = async () => {
             <p>${data[counter].body}</p> `;
         };
         apiNextBtn.addEventListener("click", nextfunctrynext);
-
+        // //////////
         let prevfunctrynext = () => {
           counter = (counter - 1 + apiLength) % apiLength;
-          // counter--;
-
           console.log("++++data[counter].id:", data[counter].id);
           apiContent.innerHTML = ` <h3>${data[counter].id} </h3>
            <br>
@@ -118,31 +118,14 @@ let handlResponsFetch = async () => {
             <p>${data[counter].body}</p> `;
         };
         apiPrevBtn.addEventListener("click", prevfunctrynext);
-
-        // apiPrevBtn.addEventListener("click", () => {
-        //   console.log("all the elements will apear");
-        //   console.log("api Prev clicked  ", dta.title);
-        // });
+        // //////////
       });
-
-      // apiNextBtn.addEventListener("click", () => {
-      //   console.log(" clicked next ");
-      //   // data.map((i) => {
-      //   //   console.log("apiNextBtn clicked data", data[i].id);
-      //   // });
-      // });
-      // apiNextBtn.addEventListener("click", nextfunctrynext);
-      // console.log("dta[1].id::::", data[1].id);
-      // apiNextBtn.addEventListener("click", nextfunctrynext);
     } else {
       console.log("this is the server error", data);
     }
-    // console.log("the data is : ", data);
   } catch (error) {
     console.log("Fetch error coming from : catch error is : ", error);
   }
-
-  // console.log(data[0].title);
 };
 
 handlResponsFetch();
