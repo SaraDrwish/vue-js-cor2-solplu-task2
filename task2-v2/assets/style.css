@@ -137,12 +137,13 @@
   background-color:rgb(19, 61, 64);
   border: 2px solid rgb(255, 129, 20);
   border-radius: 1rem;
-  color: rgb(87, 59, 62);
+  color: rgb(90, 36, 42);
   font-size: 22px;
 }
 .apiContent .span  , .apiContent span{
   color: sandybrown;
   padding: 1rem;
+  font-weight: 600;
 }
 .apiContent h3 {
   color: rgb(221, 171, 185);

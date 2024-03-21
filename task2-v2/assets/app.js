@@ -67,10 +67,11 @@ prevImgBtn.addEventListener("click", prevImgSelct);
 // /////////
 // //////////// end   edit task 2---------
 
-// //////////// start task task week 3--------------------------------------------------
+// //////////// start task task week 3----------------------------------------------------------------
 
 let apiContent = document.querySelector(".apiContent");
-
+let apiNextBtn = document.querySelector(".nextApi");
+let apiPrevBtn = document.querySelector(".prevApi");
 let apiData;
 let apiCount = 0;
 let url = "https://jsonplaceholder.typicode.com/posts";
@@ -85,11 +86,62 @@ let handlResponsFetch = async () => {
       // console.log(data[1].title);
       // console.log(data[1].id);
       data.map((dta, index) => {
-        console.log("ddattaa : will appear 100 time");
+        // console.log("ddattaa : will appear ${data.length} time" );
         // console.log(d);
-        console.log("the id of all ....", dta.title, "...indexxxxx:", index);
-        apiContent.innerHTML = ` <h3>${dta.id} </h3> <br>  <span>${dta.title}</span>  <br> <p>${dta.body}</p> `;
+        // apiContent.innerHTML = ` <h3>${dta.id} </h3> <br>  <span>${dta.title}</span>  <br> <p>${dta.body}</p> `;
+
+        // console.log(typeof apiLength);
+        // console.log("api length", apiLength++);
+        // console.log("apiLength ++", apiLength);
+
+        let leepdata = () => {
+          // data.map(() => {
+          //   console.log("map data:", data);
+          // });
+          // apiLength++;
+          for (let i = 0; i <= apiLength; i++) {
+            console.log("::i::", i);
+          }
+          // console.log("data length", data.length);
+
+          console.log("leepdata:", data[1].id);
+        };
+        // leepdata();
+        let counter = 0;
+        let apiLength = data.length;
+
+        let nextfunctrynext = () => {
+          counter = (counter + 1) % apiLength;
+          console.log(
+            "data[counter].id",
+            data[counter].id,
+            "data[counter].title",
+            data[counter].title,
+            dta.body,
+            "dta.body"
+          );
+          apiContent.innerHTML = ` <h3>${data[counter].id} </h3>
+           <br>
+            <span>${data[counter].title}</span>  
+            <br>
+            <p>${dta.body}</p> `;
+        };
+        nextfunctrynext();
+
+        console.log("the id of all ....", dta.id);
+        apiPrevBtn.addEventListener("click", () => {
+          console.log("all the elements will apear");
+          console.log("api Prev clicked  ", dta.title);
+        });
       });
+
+      apiNextBtn.addEventListener("click", () => {
+        console.log(" clicked next ");
+        // data.map((i) => {
+        //   console.log("apiNextBtn clicked data", data[i].id);
+        // });
+      });
+
       // console.log("dta[1].id::::", data[1].id);
     } else {
       console.log("this is the server error", data);
@@ -98,31 +150,25 @@ let handlResponsFetch = async () => {
   } catch (error) {
     console.log("Fetch error coming from : catch error is : ", error);
   }
+
   // console.log(data[0].title);
-  // console.log(data[0].id);
   // console.log(data[1].title);
-  // console.log(data[1].id);
 
   // .then((data) => {
-  //   console.log("data is : (array) ");
   //   console.log(data);
   //   apiData = data.forEach((el) => {
   //     apiTitle = `<span>${el.id}</span>`;
   //     let apih3 = `<h3>${el.title}</h3>`;
   //     let apiP = `<p>${el.body}</p>`;
-
   //     let apiSpanElm = document
   //       .querySelector(".apiContent")
   //       .insertAdjacentHTML("beforeend", apiP);
   //     let apih3Elm = document
   //       .querySelector(".apiContent")
   //       .insertAdjacentHTML("beforeend", apih3);
-
   //     let apiTitleElm = document
   //       .querySelector(".apiContent")
   //       .insertAdjacentHTML("beforeend", apiTitle);
-
-  //     console.log(el);
   //     console.log(el.body + "   --  " + el.id + "   --  " + el.title);
   //    });
   // })
