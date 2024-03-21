@@ -67,7 +67,7 @@ prevImgBtn.addEventListener("click", prevImgSelct);
 // /////////
 // //////////// end   edit task 2---------
 
-// //////////// start task task week 3---------
+// //////////// start task task week 3--------------------------------------------------
 
 let apiContent = document.querySelector(".apiContent");
 
@@ -88,6 +88,7 @@ let handlResponsFetch = async () => {
         console.log("ddattaa : will appear 100 time");
         // console.log(d);
         console.log("the id of all ....", dta.title, "...indexxxxx:", index);
+        apiContent.innerHTML = ` <h3>${dta.id} </h3> <br>  <span>${dta.title}</span>  <br> <p>${dta.body}</p> `;
       });
       // console.log("dta[1].id::::", data[1].id);
     } else {
