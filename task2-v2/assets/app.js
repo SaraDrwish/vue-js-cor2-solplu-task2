@@ -75,18 +75,14 @@ let apiPrevBtn = document.querySelector(".prevApi");
 let apiAutoBtn = document.querySelector(".autoApi");
 let apiRandomBtn = document.querySelector(".randomApi");
 let apiStopBtn = document.querySelector(".stopApi");
-
 let apiData;
 let apiCount = 0;
 let url = "https://jsonplaceholder.typicode.com/posts";
-
 let handlResponsFetch = async () => {
   try {
     let response = await fetch(url);
     let data = await response.json();
-
     if (response.status == 200) {
-      // console.log(data);
       data.map((dta, index) => {
         apiContent.innerHTML = `
         <h3>${data[0].id} </h3> 
@@ -94,10 +90,8 @@ let handlResponsFetch = async () => {
         <span>${data[0].title}</span> 
         <br>
         <p>${data[0].body}</p> `;
-
         let counter = 0;
         let apiLength = data.length;
-
         let nextfunctrynext = () => {
           counter = (counter + 1) % apiLength;
           console.log("++++data[counter].id:", data[counter].id);
@@ -112,10 +106,6 @@ let handlResponsFetch = async () => {
         let prevfunctrynext = () => {
           counter = (counter - 1 + apiLength) % apiLength;
           console.log("++++data[counter].id:", data[counter].id);
-          // if (counter <= 0) {
-          //   counter = apiLength.length;
-          // }
-          // counter--;
           apiContent.innerHTML = ` <h3>${data[counter].id} </h3>
            <br>
             <span>${data[counter].title}</span>  
@@ -158,7 +148,6 @@ let handlResponsFetch = async () => {
             <p>${data[randomApiNum].body}</p> `;
           }, 2000);
         };
-
         apiRandomBtn.addEventListener("click", randomGenerate);
         ////////////
       });
@@ -169,7 +158,5 @@ let handlResponsFetch = async () => {
     console.log("Fetch error coming from : catch error is : ", error);
   }
 };
-
 handlResponsFetch();
-
 // /////////////////////////////////////////////////////////////////////task 3 end
