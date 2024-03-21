@@ -39,7 +39,7 @@
     flex-direction: column;
     gap: 2rem;
   }
-   .home-content h1{
+   .home-content h1 , h2{
     margin: auto;
     text-align: center;
     text-transform: capitalize;
@@ -88,13 +88,13 @@
     padding: 0.5rem;
     color: rgb(255, 145, 0);
   }
-  .home-content-2 .img-cont{
+  .img-cont{
     display: flex;
     padding: 0.5rem;
     width: 90%;
     /* height: 40%; */
   }
-  .home-content-2 .img-cont .img-slidr{
+   .img-cont .img-slidr{
     display: flex;
     align-items: center;
     justify-content: center;
@@ -141,7 +141,7 @@
   padding: 1rem;
 }
 .apiContent p{
-  color: rgb(163, 207, 192);
+  color: rgb(191, 231, 217);
   font-weight: 700;
   width: 90%;
   margin:  0 0 2.6rem 0;
@@ -166,14 +166,14 @@
     display: block;
   }
 
-  .home-content-2 .btns{
+  .btns{
     display: flex;
     gap: 1rem;
     align-items: center;
     justify-content: center;
     margin: 1rem auto;
   }
-  .home-content-2 .btns  button{
+   .btns  button{
     text-transform: capitalize;
     border-radius: 1rem;
     padding: 1rem;
@@ -187,10 +187,15 @@
     -ms-border-radius: 1rem;
     -o-border-radius: 1rem;
   }
-  .btns .stop , #stop{
+  .btns .stop , #stop {
     background-color:rgb(255, 145, 0) ;
     color:rgb(68, 0, 15)  ;
   }
+ 
+ #stopApi{
+          background-color:rgb(238, 161, 60);
+            color:rgb(57, 40, 43) ;
+    }
   .btns .next , .btns .prev{
     color: rgb(245, 169, 184) !important;
     font-weight: bolder;

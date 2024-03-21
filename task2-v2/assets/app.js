@@ -10,6 +10,7 @@ let imgArr = [
   "8.png",
   "9.png",
 ];
+
 let randImgBtn = document.querySelector(".random");
 let autoImgBtn = document.querySelector(".auto");
 let prevImgBtn = document.querySelector(".prev");
@@ -68,9 +69,6 @@ prevImgBtn.addEventListener("click", prevImgSelct);
 
 // //////////// start task task week 3---------
 
-let apiTitle = document.querySelector(".img-slider-h3-title");
-let apiPost = document.querySelector(".img-slider-p");
-let apispanId = document.querySelector(".apiContent span");
 let apiContent = document.querySelector(".apiContent");
 
 let apiData;
