@@ -83,22 +83,14 @@ let handlResponsFetch = async () => {
 
     if (response.status == 200) {
       // console.log(data);
-      // console.log(data[1].id);
       data.map((dta, index) => {
-        // console.log("ddattaa : will appear ${data.length} time" );
         apiContent.innerHTML = ` <h3>${data[0].id} </h3> <br>  <span>${data[0].title}</span>  <br> <p>${data[0].body}</p> `;
-        // apiContent.innerHTML = ` <h3>${dta.id} </h3> <br>  <span>${dta.title}</span>  <br> <p>${dta.body}</p> `;
-
-        let leepdata = () => {
-          // data.map(() => {
-          //   console.log("map data:", data);
-          // });
-          for (let i = 0; i <= apiLength; i++) {
-            console.log("::i::", i);
-          }
-          // console.log("data length", data.length);
-          console.log("leepdata:", data[1].id);
-        };
+        // let leepdata = () => {
+        //   for (let i = 0; i <= apiLength; i++) {
+        //     console.log("::i::", i);
+        //   }
+        //   console.log("leepdata:", data[1].id);
+        // };
         // leepdata();
         let counter = 0;
         let apiLength = data.length;
@@ -112,14 +104,25 @@ let handlResponsFetch = async () => {
             <br>
             <p>${data[counter].body}</p> `;
         };
-        // let varfuncnext = nextfunctrynext();
         apiNextBtn.addEventListener("click", nextfunctrynext);
 
-        console.log("the id of all ....", dta.id);
-        apiPrevBtn.addEventListener("click", () => {
-          console.log("all the elements will apear");
-          console.log("api Prev clicked  ", dta.title);
-        });
+        let prevfunctrynext = () => {
+          counter = (counter - 1 + apiLength) % apiLength;
+          // counter--;
+
+          console.log("++++data[counter].id:", data[counter].id);
+          apiContent.innerHTML = ` <h3>${data[counter].id} </h3>
+           <br>
+            <span>${data[counter].title}</span>  
+            <br>
+            <p>${data[counter].body}</p> `;
+        };
+        apiPrevBtn.addEventListener("click", prevfunctrynext);
+
+        // apiPrevBtn.addEventListener("click", () => {
+        //   console.log("all the elements will apear");
+        //   console.log("api Prev clicked  ", dta.title);
+        // });
       });
 
       // apiNextBtn.addEventListener("click", () => {
