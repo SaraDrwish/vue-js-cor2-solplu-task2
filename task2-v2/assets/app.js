@@ -58,15 +58,12 @@ function prevImgSelct() {
   currentImg--;
   return setImgUI();
 }
-
 randImgBtn.addEventListener("click", getRandomImg);
 autoImgBtn.addEventListener("click", autoDisplayImg);
 stopImgBtn.addEventListener("click", stopAutoPlayImg);
 nextImgBtn.addEventListener("click", nextImgSelct);
 prevImgBtn.addEventListener("click", prevImgSelct);
-
 // /////////
-
 // //////////// end   edit task 2---------
 
 // //////////// start task task week 3---------
@@ -87,10 +84,14 @@ let handlResponsFetch = async () => {
 
     if (response.status == 200) {
       console.log(data);
-      // data.map((d) => {
-      //   console.log("ddattaa : will appear 100 time");
-      //   console.log(d);
-      // });
+      // console.log(data[1].title);
+      // console.log(data[1].id);
+      data.map((dta, index) => {
+        console.log("ddattaa : will appear 100 time");
+        // console.log(d);
+        console.log("the id of all ....", dta.title, "...indexxxxx:", index);
+      });
+      // console.log("dta[1].id::::", data[1].id);
     } else {
       console.log("this is the server error", data);
     }
