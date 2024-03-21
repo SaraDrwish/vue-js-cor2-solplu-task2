@@ -74,6 +74,7 @@ let apiNextBtn = document.querySelector(".nextApi");
 let apiPrevBtn = document.querySelector(".prevApi");
 let apiAutoBtn = document.querySelector(".autoApi");
 let apiRandomBtn = document.querySelector(".randomApi");
+let apiStopBtn = document.querySelector(".stopApi");
 
 let apiData;
 let apiCount = 0;
@@ -86,7 +87,7 @@ let handlResponsFetch = async () => {
 
     if (response.status == 200) {
       // console.log(data);
-      data.map((data) => {
+      data.map((dta, index) => {
         apiContent.innerHTML = `
         <h3>${data[0].id} </h3> 
         <br>
@@ -111,6 +112,10 @@ let handlResponsFetch = async () => {
         let prevfunctrynext = () => {
           counter = (counter - 1 + apiLength) % apiLength;
           console.log("++++data[counter].id:", data[counter].id);
+          // if (counter <= 0) {
+          //   counter = apiLength.length;
+          // }
+          // counter--;
           apiContent.innerHTML = ` <h3>${data[counter].id} </h3>
            <br>
             <span>${data[counter].title}</span>  
@@ -119,6 +124,43 @@ let handlResponsFetch = async () => {
         };
         apiPrevBtn.addEventListener("click", prevfunctrynext);
         // //////////
+        let autofunctrynextVAAR;
+        let autofunctrynext = () => {
+          autofunctrynextVAAR = setInterval(() => {
+            console.log("autofunctrynext");
+            counter = (counter + 1) % apiLength;
+            apiContent.innerHTML = ` <h3>${data[counter].id} </h3>
+           <br>
+            <span>${data[counter].title}</span>  
+            <br>
+            <p>${data[counter].body}</p> `;
+          }, 2000);
+        };
+        apiAutoBtn.addEventListener("click", autofunctrynext);
+        // //////////
+        let stopAutoApiGenerate = () => {
+          console.log("stopAutoApiGenerate");
+          clearInterval(autofunctrynextVAAR);
+          clearInterval(randomGenerateVaar);
+        };
+        apiStopBtn.addEventListener("click", stopAutoApiGenerate);
+        ////////////
+        let randomGenerateVaar;
+
+        let randomGenerate = () => {
+          randomGenerateVaar = setInterval(() => {
+            console.log("randomGenerate");
+            let randomApiNum = Math.floor(Math.random() * apiLength + 1);
+            apiContent.innerHTML = ` <h3>${data[randomApiNum].id} </h3>
+           <br>
+            <span>${data[randomApiNum].title}</span>  
+            <br>
+            <p>${data[randomApiNum].body}</p> `;
+          }, 2000);
+        };
+
+        apiRandomBtn.addEventListener("click", randomGenerate);
+        ////////////
       });
     } else {
       console.log("this is the server error", data);

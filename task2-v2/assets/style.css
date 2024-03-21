@@ -127,6 +127,7 @@
  
 .apiContent{
   width: 80%;
+  height: 22rem;
   display: flex;
   flex-direction: column;
   align-items: center;
